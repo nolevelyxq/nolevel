@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>水蜜桃</title>
+    <link rel="stylesheet" href="./css/styles.css">
+    <script src="Bootstrap/js/jquery.min.js"></script>
+
+</head>
+
+<body>
+    <div class="tab">
+        <div class="tab_list" style="overflow: hidden;">
+            <ul>
+                <li class="current"><img src="images/firstPage.jpg" alt="" id="fp">首页</li>
+                <li><img src="images/shop.jpg" alt="" id="sp">购物车</li>
+                <li id="ty">桃园体验</li>
+                <li>种植体验</li>
+                <li>直播</li>
+                <li><img src="images/hn.jpg" alt="" id="hn">联系我们</li>
+                <li class="denglu" style="border-color: transparent;"><a href="#" id="loginBtn">登录</a> | <a
+                        href="">注册</a></li>
+            </ul>
+        </div>
+
+        <div class=" tab_con">
+            <div class="item" style="display: block;">
+                <h1 style="text-align: center;">产品介绍</h1>
+                <div class="chanpingaishu">
+                    <li><img src="images/first_page1.jpg" alt=""></li>
+                    <li><img src="images/first_page2.jpg" alt=""></li>
+                    <li><img src="images/first_page3.jpg" alt=""></li>
+                    <li><img src="images/first_page4.jpg" alt=""></li>
+
+                </div>
+                <div class="wenzi">
+                    <li>产品采购</li>
+                    <li>桃园体验</li>
+                    <li>种植体验</li>
+                    <li>直播</li>
+                </div>
+                <h2>水蜜桃 (Honey peach)</h2>
+                <div class="taoph">
+                    <li><img src="images/taohua.jpg" alt="" class="thua"></li>
+                    <li><img src="images/taozi.jpg" alt="" class="tzi"></li>
+                </div>
+                <div class="introduction">
+                    <li>
+                        <h4 class="gongxiao">★功效 & 作用</h4>
+                        <ul class="yichu">
+                            <li>健美皮肤&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;水蜜桃的热量低，含有丰富的果胶与膳食纤维
+                            </li>
+                            <li>减肥瘦身&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;水蜜桃能健美皮肤，养血美颜，清胃，润肺，祛痰
+                            </li>
+                            <li>补益气血&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;水蜜桃的含铁量高，具有促进血红蛋白再生的能力
+                            </li>
+                            <li>预防便秘&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;水蜜桃富含胶质物，胶质物可吸收大肠中多余水分
+                            </li>
+                            <li>增进食欲&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;水蜜桃中富含膳食纤维与果胶，可以促进肠胃蠕动
+                            </li>
+                        </ul>
+                    </li>
+
+                </div>
+                <h4>√ 我们的规模</h4>
+                <p class="guimo">▲<u>水蜜桃承包农户1000余户</u>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;▲<u>种植大户
+                        (6.67hm2以上)55户</u>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    ▲<u>水蜜桃经纪人100余人</u><br><br>
+                    ▲<u>各类水蜜桃合作组织10多个</u>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;▲<u>家庭农场15个</u>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;▲<u>果品交易市场1个</u><br><br>
+                    ▲<u>高档水蜜桃展示园区5个</u></p>
+                <h4 style="margin-left: 800px;">👊我们的优势</h4>
+                <div class="youshi" style=" display: flex;
+                justify-content: space-between;
+                border-bottom: black dotted 5px;
+                margin-bottom: 10px;">
+                    <li class="circle-item">自然条件</li>
+                    <li class="circle-item">种植技术</li>
+                    <li class="circle-item">品种品质</li>
+                    <li class="circle-item">品牌建设</li>
+                    <li class="circle-item">产品融合</li>
+                </div>
+                <div class="comment-area">
+                    <h4 class="lyq">评论区</h4>
+                    <div class="input-box">
+                        <textarea name="comment" style="resize: none;" value="请留下您的应用体验，我们会努力改善..." id="comment-text"
+                            cols="30" rows="10" placeholder="请留下您的应用体验，我们会努力改善..."></textarea>
+                        <button id="publish-btn">发布</button>
+                    </div>
+                    <ul class="pinglun">
+
+                    </ul>
+                </div>
+            </div>
+            <script>
+                var btn = document.querySelector('button');
+                var text = document.querySelector('textarea');
+                var ul = document.querySelector('.pinglun');
+                btn.onclick = function () {
+                    if (text.value == '') {
+                        alert('您没有输入内容');
+                        return false;
+                    }
+                    else {
+                        var li = document.createElement('li');
+                        li.innerHTML = text.value;
+
+                        ul.insertBefore(li, ul.children[0]);
+                        text.value = '';
+                        alert('发布成功');
+                    }
+                }
+
+            </script>
+
+            <!-- <div class="item biaoge">
+                <table border="1" align="center">
+                    <thead>
+                        <tr>
+                            <td>品种名称</td>
+                            <td>特点</td>
+                            <td>品种图片</td>
+                            <td>其它</td>
+                        </tr>
+                        <tr>
+                            <td>春蕾</td>
+                            <td>早熟,果皮黄色,果顶尖圆</td>
+                            <td><img src="images/pinzhong1.jpg" alt="春蕾" class="ph1"></td>
+                            <td><a
+                                    href="https://baike.baidu.com/item/%E6%98%A5%E8%95%BE/11851?fromModule=lemma_inlink">了解更多</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>雨花露</td>
+                            <td>早熟,果顶圆平中凹，果实底色黄白色</td>
+                            <td><img src="images/pinzhong2.jpg" alt="雨花露" class="ph2"></td>
+                            <td><a
+                                    href="https://baike.baidu.com/item/%E9%9B%A8%E8%8A%B1%E9%9C%B2/6950450?fromModule=lemma_inlink">了解更多</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>霞晖6号</td>
+                            <td>中熟,果皮底色乳黄色,果肉白色</td>
+                            <td><img src="images/pinzhong3.jpg" alt="霞晖6号" class="ph3"></td>
+                            <td><a
+                                    href="https://baike.baidu.com/item/%E9%9C%9E%E6%99%966%E5%8F%B7/19785293?fromModule=lemma_inlink">了解更多</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>湖景蜜露</td>
+                            <td>中熟,果实圆球形，果皮乳黄</td>
+                            <td><img src="images/pinzhong4.jpg" alt="湖景蜜露" class="ph4"></td>
+                            <td><a
+                                    href="https://baike.baidu.com/item/%E6%B9%96%E6%99%AF%E8%9C%9C%E9%9C%B2/8834307?fromModule=lemma_inlink">了解更多</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>晚湖景</td>
+                            <td>颜色偏黄偏红,果型偏平,圆润</td>
+                            <td><img src="images/pinzhong5.jpg" alt="晚湖景" class="ph5"></td>
+                            <td><a
+                                    href="https://baike.baidu.com/item/%E9%BE%99%E6%B3%89%E9%A9%BF%E6%B0%B4%E8%9C%9C%E6%A1%83/158812">了解更多</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>锦绣</td>
+                            <td>果肉金黄色,近核处果肉红色</td>
+                            <td><img src="images/pinzhong6.jpg" alt="锦绣" class="ph6"></td>
+                            <td><a
+                                    href="https://baike.baidu.com/item/%E9%94%A6%E7%BB%A3/20394698?fromModule=lemma_inlink">了解更多</a>
+                            </td>
+                        </tr>
+                    </thead> -->
+            <!-- <tbody>
+
+                    </tbody>
+                </table>
+            </div> -->
+            <div class="item">
+                <div class="fresh-fruit-section">
+                    <h4>鲜果区</h4>
+                    <div class="selection-box">
+                        <h3>根据您的需求选择商品</h3>
+                        <div class="filter-group">
+                            <span class="filter-label">时节筛选</span>
+                            <input type="radio" name="shijie" id="early"> <label for="early">早熟</label>
+                            <input type="radio" name="shijie" id="medium"> <label for="medium">中熟</label>
+                            <input type="radio" name="shijie" id="late"> <label for="late">晚熟</label>
+                        </div>
+                        <div class="filter-group">
+                            <span class="filter-label">特点筛选</span>
+                            <input type="radio" name="tedian" id="full-white"> <label for="full-white">全白</label>
+                            <input type="radio" name="tedian" id="milky-white"> <label for="milky-white">乳白</label>
+                            <input type="radio" name="tedian" id="pink"> <label for="pink">粉红</label>
+                            <input type="radio" name="tedian" id="full-red"> <label for="full-red">全红</label>
+                        </div>
+                        <div class="filter-group">
+                            <span class="filter-label">价格筛选</span>
+                            <input type="checkbox" name="price-filter" id="flash-sale"> <label
+                                for="flash-sale">秒杀价</label>
+                        </div>
+                    </div>
+                    <div class="countdown-box">
+                        <span class="countdown-label">秒杀价!</span>
+                        <span class="countdown-digit"><span class="hour">1</span>小时</span>
+                        <span class="countdown-digit"><span class="minute">2</span>分钟</span>
+                        <span class="countdown-digit"><span class="second">3</span>秒</span>
+                    </div>
+                </div>
+                <script>
+                    // 1. 获取元素 
+                    var hour = document.querySelector('.hour');
+                    var minute = document.querySelector('.minute');
+                    var second = document.querySelector('.second');
+                    var inputTime = +new Date('2024-5-1 18:00:00');
+                    countDown();
+
+                    setInterval(countDown, 1000);
+
+                    function countDown() {
+                        var nowTime = +new Date();
+                        var times = (inputTime - nowTime) / 1000;
+                        var h = parseInt(times / 60 / 60 % 24);
+                        h = h < 10 ? '0' + h : h;
+                        hour.innerHTML = h;
+                        var m = parseInt(times / 60 % 60);
+                        m = m < 10 ? '0' + m : m;
+                        minute.innerHTML = m;
+                        var s = parseInt(times % 60);
+                        s = s < 10 ? '0' + s : s;
+                        second.innerHTML = s;
+                    }
+                </script>
+                <div class="shop">
+                    <ul>
+                        <li>
+                            <img src="images/chanpin1.jpg" alt="商品图片" class="sp">
+                            <h5>果真秀现货春雪水蜜桃桃子新鲜水果脆甜桃应当季毛桃整箱 一斤装单果140g左右</h5>
+                            <div class="info">
+                                <span>￥29.90</span>
+                                <em>|</em>
+                                <a href="javascript:;" class="decrement">-</a>
+                                <input type="text" value="0" class="itxt">
+                                <a href="javascript:;" class="increment">+</a>份
+                            </div>
+                        </li>
+                    </ul>
+                    <ul>
+                        <li>
+                            <img src="images/chanpin2.jpg" alt="商品图片" class="sp">
+                            <h5>顺丰特大果5斤春雪水蜜桃桃子新鲜水果脆甜毛桃应季孕妇雪油 1斤顺丰【大果丨单果150g+】</h5>
+                            <div class="info">
+                                <span>￥26.80</span>
+                                <em>|</em>
+                                <a href="javascript:;" class="decrement">-</a>
+                                <input type="text" value="0" class="itxt">
+                                <a href="javascript:;" class="increment">+</a>份
+                            </div>
+                        </li>
+                    </ul>
+                    <ul>
+                        <li>
+                            <img src="images/chanpin3.jpg" alt="商品图片" class="sp">
+                            <h5>头茬水蜜桃5斤新鲜水果大桃子脆甜毛桃当季整箱 500g A+级顺丰【精品果王】品质升级</h5>
+                            <div class="info">
+                                <span>￥28.22</span>
+                                <em>|</em>
+                                <a href="javascript:;" class="decrement">-</a>
+                                <input type="text" value="0" class="itxt">
+                                <a href="javascript:;" class="increment">+</a>份
+                            </div>
+                        </li>
+                    </ul>
+                    <ul>
+                        <li>
+                            <img src="images/chanpin4.jpg" alt="商品图片" class="sp">
+                            <h5>惗优品水蜜桃白凤水蜜桃 时令水果精选特产 桃子中秋水果礼盒 8个礼盒装 (单果3-4两左右)</h5>
+                            <div class="info">
+                                <span>￥147.84</span>
+                                <em>|</em>
+                                <a href="javascript:;" class="decrement">-</a>
+                                <input type="text" value="0" class="itxt">
+                                <a href="javascript:;" class="increment">+</a>份
+                            </div>
+                        </li>
+                    </ul>
+                    <ul>
+                        <li>
+                            <img src="images/chanpin5.jpg" alt="商品图片" class="sp">
+                            <h5>余悦春雪水蜜桃(顺丰)当季现摘冬桃脆甜水蜜桃软毛桃 2斤精选装 臻选果王【单果250g+】</h5>
+                            <div class="info">
+                                <span>￥69.00</span>
+                                <em>|</em>
+                                <a href="javascript:;" class="decrement">-</a>
+                                <input type="text" value="0" class="itxt">
+                                <a href="javascript:;" class="increment">+</a>份
+                            </div>
+                        </li>
+                    </ul>
+                    <ul>
+                        <li>
+                            <img src="images/chanpin6.jpg" alt="商品图片" class="sp">
+                            <h5>果小姐果鲜生河北水蜜桃 当季新鲜毛桃子水果 现摘现发 带箱3斤装 中大果 单果100-150g</h5>
+                            <div class="info">
+                                <span>￥74.80</span>
+                                <em>|</em>
+                                <a href="javascript:;" class="decrement">-</a>
+                                <input type="text" value="0" class="itxt">
+                                <a href="javascript:;" class="increment">+</a>份
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <h4>果脯&果茶区</h4>
+                <div class="guofu">
+                    <li><img src="images/guofu.jpg" alt="" class="sp">
+                        <h5>词味水蜜桃干500g桃子干白桃干黄桃片 水蜜桃250g+黄桃干250g共500g</h5>
+                        <div class="info"><span>￥19.70</span><em>|</em>
+                            <a href="javascript:;" class="decrement">-</a>
+                            <input type="text" value="0" class="itxt">
+                            <a href="javascript:;" class="increment">+</a>份
+                        </div>
+                    </li>
+                    <li><img src="images/guocha.jpg" alt="" class="sp">
+                        <h5>彭广堂50小包蜜桃白桃乌龙茶包叶花茶水果茶泡水喝的茶冷泡茶花果茶175g</h5>
+                        <div class="info"><span>￥24.80</span><em>|</em>
+                            <a href="javascript:;" class="decrement">-</a>
+                            <input type="text" value="0" class="itxt">
+                            <a href="javascript:;" class="increment">+</a>份
+                        </div>
+                    </li>
+                </div>
+                <script>
+                    $('.increment').click(function () {
+                        var n = $(this).siblings('.itxt').val();
+                        n++;
+                        $(this).siblings('.itxt').val(n);
+                    });
+                    $('.decrement').click(function () {
+                        var n = $(this).siblings('.itxt').val();
+                        if (n == 0) return false;
+                        n--;
+                        $(this).siblings('.itxt').val(n);
+
+                    });
+                </script>
+                <div
+                    style="width: 600px; margin: 20px auto; padding: 20px; background-color: #f5f5f5; border-radius: 10px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+                    <h3 style="text-align: center;">请选择支付方式：</h3>
+                    <div style="margin-top: 20px;margin-left: 135px;">
+                        <input type="radio" name="buy" style="margin-right: 5px; vertical-align: middle;">
+                        <label style="font-weight: normal; margin-right: 20px;">微信支付</label>
+                        <input type="radio" name="buy" style="margin-right: 5px; vertical-align: middle;">
+                        <label style="font-weight: normal; margin-right: 20px;">支付宝支付</label>
+                        <input type="radio" name="buy" style="margin-right: 5px; vertical-align: middle;">
+                        <label style="font-weight: normal;">银行卡支付</label>
+                    </div>
+                    <div style="margin-top: 30px; text-align: center;">
+                        <button class="add-to-cart"
+                            style="display: inline-block; padding: 10px 20px; font-size: 16px; color: white; background-color: #4CAF50; border: none; border-radius: 5px; cursor: pointer;">
+                            点击进入付款页面
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="item yuyue">
+                <div class="yuyue" style="font-family: Arial, sans-serif;">
+                    <div class="yuyue-header">
+                        <p>探索桃园的四季风情，体验丰富多彩的文旅活动</p>
+                    </div>
+
+                    <div class="yuyue-content">
+                        <h2>桃园四季</h2>
+                        <p>每个季节，桃园都有着不同的风貌和活动。春天，您可以欣赏到桃花盛开的美丽景色；夏天，桃园里果实累累，是采摘的最佳季节；秋天，您可以品味到桃子的甜美；冬天，桃园依然宁静美丽，等待着新的生机。
+                        </p>
+
+                        <h2>文旅活动</h2>
+                        <ul>
+                            <li>春季赏花节：漫步在桃花丛中，感受春天的气息。</li>
+                            <li>夏季采摘节：亲手采摘新鲜桃子，体验丰收的喜悦。</li>
+                            <li>秋季品桃大会：品尝各种品种的桃子，评选最佳口味。</li>
+                            <li>冬季摄影展：展示桃园四季的美丽照片，感受大自然的鬼斧神工。</li>
+                        </ul>
+
+                        <h2>采摘体验</h2>
+                        <p>在夏季，我们特别推出采摘体验活动。您可以预约参加，亲手采摘新鲜的桃子。在这里，您可以感受到大自然的魅力，品尝到最新鲜的果实。</p>
+
+                        <div class="image-gallery">
+                            <img src="images/spring.jpg" alt="Spring Peach Blossom" class="uniform-image">
+                            <img src="images/summer.jpg" alt="Summer Peach Harvest" class="uniform-image">
+                            <img src="images/autumn.jpg" alt="Autumn Tasting" class="uniform-image">
+                            <img src="images/winter.jpg" alt="Winter Peaceful" class="uniform-image">
+
+                        </div>
+
+                        <div class="button-container">
+                            <a href="#" class="yuyue-button">预约参观</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="item">
+                <header style="background-color: #f8f9fa;
+            padding: 20px;
+            text-align: center;">
+                    <h1 style=" color: #333;
+            margin-bottom: 0; margin-left: 0px;">种植体验</h1>
+                    <p>体验水蜜桃生长的全过程</p>
+                </header>
+
+                <main style="padding: 20px;">
+                    <section class="diy-section">
+                        <h2>DIY你的桃园</h2>
+                        <p style=" color: #666;">选择你的蜜桃品种，开始种植吧！</p>
+                        <input type="checkbox">春蕾 <input type="checkbox">玫瑰露 <input type="checkbox">湖景蜜露<br>
+                        <input type="checkbox">白凤 <input type="checkbox">晚景湖 <input type="checkbox">凤凰水蜜<br>
+                        <button class="zhongzhi">开始种植</button>
+                    </section>
+
+                    <section class="growth-section">
+                        <h2>水蜜桃生长阶段</h2>
+                        <div class="growth-stages">
+                            <div class="stage">
+                                <h3>萌芽期</h3>
+                                <p>这是水蜜桃生长的初期阶段...</p>
+                                <img src="images/germination.jpg" alt="Germination" class="stage-image">
+                            </div>
+                            <div class="stage">
+                                <h3>生长期</h3>
+                                <p>水蜜桃开始迅速生长...</p>
+                                <img src="images/growth.jpg" alt="Growth" class="stage-image">
+                            </div>
+                            <div class="stage">
+                                <h3>成熟期</h3>
+                                <p>水蜜桃即将成熟，准备采摘！</p>
+                                <img src="images/ripening.jpg" alt="Ripening" class="stage-image">
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="tips-section">
+                        <h2>种植小贴士</h2>
+                        <ul class="tips-list">
+                            <li>小贴士1：如何给水蜜桃浇水...</li>
+                            <li>小贴士2：水蜜桃生长需要的光照条件...</li>
+                            <li>小贴士3：如何防治水蜜桃的病虫害...</li>
+                        </ul>
+                    </section>
+
+                    <section class="harvest-section">
+                        <h2>采摘你的水蜜桃</h2>
+                        <p>你的水蜜桃已经成熟，快来采摘吧！</p>
+                        <img src="images/harvest.jpg" alt="Harvest" class="harvest-image">
+                        <button>采摘果实</button>
+                    </section>
+                </main>
+            </div>
+            <div class="item zb-container">
+                <div class="live-block">
+                    <img src="images/spring.jpg" alt="Live Stream Image">
+                    <h2>直播中</h2>
+                    <p>欢迎观看直播！</p>
+                </div>
+
+                <div class="offline-content">
+                    <h3>直播已结束</h3>
+                    <p>感谢您的观看！直播内容将在下班时段循环播放。</p>
+                </div>
+
+                <div class="questions-section">
+                    <input type="text" placeholder="请输入您的问题">
+                    <button>提问</button>
+                </div>
+            </div>
+            <div class="item">
+                <h1>联系我们</h1>
+
+                <div class="contact-info">
+                    <div>
+                        <i class="fas fa-phone">
+                            <p>电话: 123-456-7890</p>
+                        </i>
+
+                    </div>
+                    <div>
+                        <i class="fas fa-envelope">
+                            <p>邮箱: @cumt.edu.cn</p>
+                        </i>
+
+                    </div>
+                    <div>
+                        <i class="fas fa-map-marker-alt">
+                            <p>地址: 街道, 城市, 国家</p>
+                        </i>
+
+                    </div>
+                </div>
+
+                <form action="/submit_contact" method="post" class="contact-form">
+                    <label for="name" style="margin-left: 20px;">姓名:</label>
+                    <input type="text" id="name" name="name" required>
+
+                    <label for="email" style="margin-left: 20px;">邮箱:</label>
+                    <input type="email" id="email" name="email" required>
+
+                    <label for="message" style="margin-left: 20px;">留言:</label>
+                    <textarea style="resize: none;" id="message" name="message" required></textarea>
+
+                    <input type="submit" value="提交">
+                </form>
+
+            </div>
+        </div>
+    </div>
+    <script>
+        var tab_list = document.querySelector('.tab_list');
+        var lis = tab_list.querySelectorAll('li');
+        var items = document.querySelectorAll('.item');
+        var backgrounds = ['url(images/beijing1.jpg)',
+            'url(images/beijing2.jpg)',
+            'url(images/beijing3.jpg)',
+            'url(images/beijing4.jpg)',
+            'url(images/beijing5.jpg)',
+
+        ];
+        //排他思想
+        var flag = true;
+        var left = '0%';
+        var right = '100%';
+        // var position = ['100%', '0', '50%', '100%', '100%'];
+
+        for (var i = 0; i < lis.length; i++) {
+            lis[i].setAttribute('index', i);
+            lis[i].onclick = function () {
+                for (var i = 0; i < lis.length; i++) {
+                    lis[i].className = '';
+                }
+                this.className = 'current';
+                var index = this.getAttribute('index');
+                document.body.style.backgroundImage = backgrounds[index];
+
+                //排他思想
+                for (var i = 0; i < items.length; i++) {
+                    items[i].style.display = 'none';
+                }
+                items[index].style.display = 'block';
+
+            }
+        }
+    </script>
+</body>
+
+</html>
